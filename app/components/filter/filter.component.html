@@ -1,0 +1,20 @@
+<div class="form-check">
+  <input [(ngModel)]="filters.gender" (change)="onFilterChanged()" class="form-check-input" type="checkbox" id="genderCheck">
+  <label class="form-check-label" for="genderCheck">Gender</label>
+</div>
+<div class="form-check">
+  <input [(ngModel)]="filters.city" (change)="onFilterChanged()" class="form-check-input" type="checkbox" id="cityCheck">
+  <label class="form-check-label" for="cityCheck">City</label>
+</div>
+<div class="form-check">
+  <input [(ngModel)]="filters.street" (change)="onFilterChanged()" class="form-check-input" type="checkbox" id="cityStreet">
+  <label class="form-check-label" for="cityStreet">Street</label>
+</div>
+<div class="form-check">
+  <input [(ngModel)]="filters.email" (change)="onFilterChanged()" class="form-check-input" type="checkbox" id="cityEmail">
+  <label class="form-check-label" for="cityEmail">Email</label>
+</div>
+<div class="form-check">
+  <input [(ngModel)]="filters.phone" (change)="onFilterChanged()" class="form-check-input" type="checkbox" id="cityPhone">
+  <label class="form-check-label" for="cityPhone">Phone</label>
+</div>

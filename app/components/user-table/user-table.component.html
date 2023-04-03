@@ -1,0 +1,37 @@
+<dx-data-grid [dataSource]="users">
+  <dxo-search-panel [visible]="true"></dxo-search-panel>
+
+  <dxi-column
+    caption="Picture"
+    dataField="picture.thumbnail"
+    cellTemplate="cellTemplate"
+    width="65px">
+  </dxi-column>
+
+  <div *dxTemplate="let cell of 'cellTemplate'">
+    <img [src]="cell.value" alt="Avatar"/>
+  </div>
+
+  <dxi-column
+    caption="Name"
+    [calculateDisplayValue]="getFullName">
+  </dxi-column>
+  <dxi-column
+    [(visible)]="isGenderVisible"
+    dataField="gender">
+  </dxi-column>
+  <dxi-column
+    [(visible)]="isPhoneVisible"
+    dataField="phone">
+  </dxi-column>
+
+  <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
+
+  <div *dxTemplate="let employee of 'detail'">
+    <div class="employeeInfo">
+      <p *ngIf="isCityVisible"><strong>City:</strong> {{employee.data.location?.city}}</p>
+      <p *ngIf="isStreetVisible"><strong>Street:</strong> {{employee.data.location?.street.name}} {{employee.data.location?.street.number}}</p>
+      <p *ngIf="isEmailVisible"><strong>Email:</strong> {{employee.data.email}}</p>
+    </div>
+  </div>
+</dx-data-grid>
